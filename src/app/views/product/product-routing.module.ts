@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ChartJSComponent } from './chartjs.component';
+import { ProductComponent } from './product.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChartJSComponent,
+    component: ProductComponent,
     data: {
-      title: 'Charts'
+      title: 'Quản lý tài sản'
     }
   }
 ];
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ChartJSRoutingModule {}
+export class ProductRoutingModule {}

@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-pie-chart"></i>Quản lý tài sản
+  </div>
+  <div class="card-body">
+    <button type="button" (click)="actionProduct('add')" class="btn btn-info btn-xs pull-right mb-3"><span
+      class="fa fa-plus-circle"></span> Thêm tài sản
+    </button>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>STT</th>
+        <th>Mã tài sản</th>
+        <th>Tên tài sản</th>
+        <th>Loại tài sản</th>
+        <th>Tình trạng</th>
+        <th>Hình ảnh</th>
+
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of dataProductTable; let i = index">
+        <td class="">{{i+1}}</td>
+        <td class="">{{item._id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.category_name}}</td>
+        <td>{{item.status}}</td>
+        <td><img src ="{{item.images}}"></td>
+        <td>
+          <button class="btn btn-info btn-xs" (click)="actionProduct('edit', item)"><span
+            class="fa fa-edit"></span></button>
+          <button (click)="actionProduct('delete', item)" class="btn btn-danger btn-xs"><span
+            class="fa fa-remove"></span></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="#"><</a></li>
+      <li class="page-item active">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">4</a></li>
+      <li class="page-item"><a class="page-link" href="#">></a></li>
+    </ul>
+  </div>
+</div>

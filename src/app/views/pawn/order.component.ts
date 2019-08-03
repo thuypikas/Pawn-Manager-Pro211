@@ -9,7 +9,7 @@ export class ColorsComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private _document: any) {}
 
   public themeColors(): void {
-    Array.from(this._document.querySelectorAll('.theme-color')).forEach((el: HTMLElement) => {
+    Array.from(this._document.querySelectorAll('.pawn-color')).forEach((el: HTMLElement) => {
       const background = getStyle('background-color', el);
       const table = this._document.createElement('table');
       table.innerHTML = `
