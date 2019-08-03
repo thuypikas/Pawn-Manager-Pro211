@@ -13,41 +13,38 @@
         </div>
         <div class="card-body">
           <div class="row">
-            <!--            <div class="col-sm-12">-->
             <div class="form-group col-sm-4">
-              <label for="name">Tên tài sản</label>
-              <input type="text" class="form-control" id="name" placeholder="Tên tài sản">
+              <label>Tên tài sản</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Tên tài sản">
             </div>
             <!--          <div class="row">-->
             <div class="form-group col-sm-4">
-              <label for="ccmonth">Loại tài sản</label>
-              <select class="form-control" id="ccmonth">
+              <label>Loại tài sản</label>
+              <select class="form-control" formControlName="category_name">
                 <option>Xe máy</option>
                 <option>Điện thoại</option>
                 <option>Laptop</option>
               </select>
             </div>
             <div class="form-group col-sm-4">
-              <label>Tình trạng</label>
-              <mv-slider id="ex1" [(value)]="value" [min]="1" [max]="100" [enabled]="enabled"
-                         (change)="change()"></mv-slider>
+              <label>Trạng thái</label>
+              <input type="number" class="form-control" formControlName="status" placeholder="Trạng thái">
             </div>
           </div><!--/.row-->
-          <!--          </div>-->
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group">
                 <label>Thông tin tài sản</label>
-                <textarea id="textarea-input" name="textarea-input" rows="3" class="form-control"
+                <textarea id="textarea-input" name="textarea-input" rows="3" class="form-control" formControlName="desc"
                           placeholder="Thông tin tài sản"></textarea>
               </div>
             </div>
           </div>
-          <div class="form-group row">
-            <div class="col-md-9">
-              <input type="file" id="file-multiple-input" name="file-multiple-input" multiple>
-            </div>
-          </div>
+<!--          <div class="form-group row">-->
+<!--            <div class="col-md-9">-->
+<!--              <input type="file" id="file-multiple-input" formControlName="images" name="file-multiple-input" multiple>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
     </div><!--/.col-->

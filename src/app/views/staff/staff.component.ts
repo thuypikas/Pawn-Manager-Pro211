@@ -1,28 +1,47 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {CreateStaffComponent} from './create-staff/create-staff.component';
+import {StaffService} from './staff.service';
 
 @Component({
   templateUrl: 'staff.component.html'
 })
-export class StaffComponent {
+export class StaffComponent implements OnInit {
   bsModalRef: BsModalRef;
-  dataTable = [
-    {id: 5, account: 'thuyntt', name: 'Nguyen Thi Thu Thuy', cmt: '2855', phone: '552125', images: 'anh', position: 'Nhan vien'},
-    {id: 4, account: 'thuyntt', name: 'Nguyen Thi Thu', cmt: '785657',  phone: '58852', images: 'anh', position: 'Nhan vien'},
-    {id: 3, account: 'thuyntt', name: 'Nguyen Thu Thuy', cmt: '865865', phone: '8545415', images: 'anh', position: 'Nhan vien'},
-  ];
+  dataTable: any = [];
+
   constructor(
-    private modalService: BsModalService
-  ) { }
+    private modalService: BsModalService,
+    private  serviceStaff: StaffService
+  ) {
+  }
+
+  ngOnInit() {
+    this.getAllStaff();
+  }
+
   actionStaff(type, data: any = null) {
     this.bsModalRef = this.modalService.show(CreateStaffComponent, {
       initialState: {
         type: type,
-        data: data
+        data: data,
+        buttonClicked: this.modalButtonClicked.bind(this)
       },
       class: 'modal-lg'
     });
+  }
+
+  getAllStaff() {
+    this.serviceStaff.getAllStaff().subscribe(res => {
+      console.log(res);
+      this.dataTable = res;
+    });
+  }
+
+  modalButtonClicked(data) {
+    if (data) {
+      this.getAllStaff();
+    }
   }
 }
 

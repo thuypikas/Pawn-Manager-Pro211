@@ -9,7 +9,6 @@
       <thead>
       <tr>
         <th>STT</th>
-        <th>Mã nhân viên</th>
         <th>Tài khoản</th>
         <th>Tên nhân viên</th>
         <th>Số CMT</th>
@@ -21,14 +20,13 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of dataTable; let i = index">
-        <td class="text-center">{{i+1}}</td>
-        <td class="text-center">{{item.id}}</td>
-        <td>{{item.account}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.cmt}}</td>
+        <td>{{i+1}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.fullname}}</td>
+        <td>{{item.identification}}</td>
         <td>{{item.phone}}</td>
-        <td>{{item.images}}</td>
-        <td>{{item.position}}</td>
+        <td>{{item.avatar}}</td>
+        <td>{{item.role ? "Quản lý" : "Nhân viên"}}</td>
         <td>
           <button class="btn btn-info btn-xs" (click)="actionStaff('edit', item)"><span
             class="fa fa-edit"></span></button>

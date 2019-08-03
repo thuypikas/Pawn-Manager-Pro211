@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgModule} from '@angular/core';
 
 import {StaffComponent} from './staff.component';
@@ -20,7 +20,8 @@ import {CreateStaffComponent} from './create-staff/create-staff.component';
     StaffRoutingModule,
     BsDropdownModule.forRoot(),
     FormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ReactiveFormsModule
   ],
   declarations: [
     StaffComponent,

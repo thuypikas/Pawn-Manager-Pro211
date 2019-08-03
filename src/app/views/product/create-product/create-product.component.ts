@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {BsModalRef} from 'ngx-bootstrap';
 import {ProductService} from '../product.service';
@@ -17,8 +17,6 @@ export class CreateProductComponent implements OnInit {
   data: any;
   buttonClicked: any;
   action: any = 'Thêm';
-  enabled: any;
-  value: any;
   constructor(
     private fb: FormBuilder,
     private service: ProductService,
@@ -34,13 +32,51 @@ export class CreateProductComponent implements OnInit {
     } else if (this.type == 'delete') {
       this.action = 'Xóa';
     }
+    if (this.data != null) {
+      this.formProduct.patchValue({
+        ...this.data,
+      });
+    }
   }
   buildForm() {
-    this.formProduct = this.fb.group({});
+    this.formProduct = this.fb.group({
+      _id: 0,
+      name: ['', Validators.required],
+      category_name: ['', Validators.required],
+      status: [null, Validators.required],
+      desc: [''],
+      // images: [''],
+      createdAt: new Date(),
+      updatedAt: Date,
+    });
   }
-  submit() {}
-
-  change() {
-
+  submit() {
+    if (this.formProduct.invalid) {
+      return;
+    }
+    const params: any =  this.formProduct.value;
+    if (this.type == 'add') {
+      params._id = null;
+    }
+    if (this.type == 'add') {
+      this.service.addProduct(params).subscribe(res => {
+        this.toastr.success('Thêm thành công!');
+        this.buttonClicked(true);
+        this.modalAdd.hide();
+      });
+    } else if (this.type == 'edit') {
+      this.service.updateProduct(params).subscribe(res => {
+        this.toastr.success('Sửa thành công!');
+        this.buttonClicked(true);
+        this.modalAdd.hide();
+      });
+    } else {
+      this.service.deleteProduct(params).subscribe(res => {
+        this.toastr.success('Xóa thành công!');
+        this.buttonClicked(true);
+        this.modalAdd.hide();
+      });
+    }
   }
+
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../customer.service';
 import {BsModalRef} from 'ngx-bootstrap';
 import {Router} from '@angular/router';
@@ -45,9 +45,9 @@ export class CreateCustomerComponent implements OnInit {
   buildForm() {
     this.formCustomer = this.fb.group({
       _id: [''],
-      fullname: [''],
-      identification: [''],
-      address: [''],
+      fullname: ['', Validators.required],
+      identification: ['', Validators.required],
+      address: ['', Validators.required],
       gender: [''],
       birthday: [''],
       avatar: [''],
