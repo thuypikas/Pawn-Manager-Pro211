@@ -40,13 +40,18 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-
+import {ModalModule} from 'ngx-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import {NgxBootstrapSliderModule} from 'ngx-bootstrap-slider';
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AppAsideModule,
+    HttpClientModule,
     AppBreadcrumbModule.forRoot(),
     AppFooterModule,
     AppHeaderModule,
@@ -54,7 +59,15 @@ import { ChartsModule } from 'ng2-charts';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(
+      {timeOut: 1000,
+        positionClass: 'toast-top-right'}
+    ),
+    NgxBootstrapSliderModule
   ],
   declarations: [
     AppComponent,

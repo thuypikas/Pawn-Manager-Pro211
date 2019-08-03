@@ -24,13 +24,15 @@
               "node_modules/flag-icon-css/css/flag-icon.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/simple-line-icons/css/simple-line-icons.css",
-              "src/scss/style.scss"
+              "src/scss/style.scss",
+              "node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": ["./node_modules"]
             },
             "scripts": [
-              "node_modules/chart.js/dist/Chart.min.js"
+              "node_modules/chart.js/dist/Chart.min.js",
+              "node_modules/bootstrap-slider/dist/bootstrap-slider.min.js"
             ]
           },
           "configurations": {
@@ -143,6 +145,24 @@
     },
     "@schematics/angular:directive": {
       "prefix": "app"
+    },
+    "@schematics/angular:component": {
+      "spec": false
+    },
+    "@schematics/angular:directive": {
+      "spec": false
+    },
+    "@schematics/angular:modules": {
+      "spec": false
+    },
+    "@schematics/angular:pipe": {
+      "spec": false
+    },
+    "@schematics/angular:service": {
+      "spec": false
+    },
+    "@schematics/angular:class": {
+      "spec": false
     }
   }
 }

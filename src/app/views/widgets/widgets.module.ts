@@ -4,12 +4,14 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { WidgetsComponent } from './widgets.component';
 import { WidgetsRoutingModule } from './widgets-routing.module';
+import {ModalModule} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     WidgetsRoutingModule,
     ChartsModule,
-    BsDropdownModule
+    BsDropdownModule,
+    ModalModule.forRoot()
   ],
   declarations: [ WidgetsComponent ]
 })

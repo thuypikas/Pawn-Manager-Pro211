@@ -31,7 +31,7 @@ export interface NavData {
 
 export const navItems: NavData[] = [
   {
-    name: 'Dashboard',
+    name: 'Trang chủ',
     url: '/dashboard',
     icon: 'icon-speedometer',
     badge: {
@@ -41,113 +41,39 @@ export const navItems: NavData[] = [
   },
   {
     title: true,
-    name: 'Theme'
+    name: 'Cầm đồ'
   },
   {
-    name: 'Colors',
-    url: '/theme/colors',
+    name: 'Cầm đồ',
+    url: '/pawn/order',
     icon: 'icon-drop'
   },
   {
-    name: 'Typography',
-    url: '/theme/typography',
+    name: 'Nợ phải thu',
+    url: '/pawn/typography',
     icon: 'icon-pencil'
   },
   {
     title: true,
-    name: 'Components'
+    name: 'Quản lý'
   },
   {
-    name: 'Base',
-    url: '/base',
+    name: 'Quản lý khách hàng',
+    url: '/customer',
     icon: 'icon-puzzle',
-    children: [
-      {
-        name: 'Cards',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Carousels',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Collapses',
-        url: '/base/collapses',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Forms',
-        url: '/base/forms',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Pagination',
-        url: '/base/paginations',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Popovers',
-        url: '/base/popovers',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Progress',
-        url: '/base/progress',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Switches',
-        url: '/base/switches',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tables',
-        url: '/base/tables',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tabs',
-        url: '/base/tabs',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tooltips',
-        url: '/base/tooltips',
-        icon: 'icon-puzzle'
-      }
-    ]
   },
   {
-    name: 'Buttons',
-    url: '/buttons',
+    name: 'Quản lý nhân viên',
+    url: '/staff',
     icon: 'icon-cursor',
-    children: [
-      {
-        name: 'Buttons',
-        url: '/buttons/buttons',
-        icon: 'icon-cursor'
-      },
-      {
-        name: 'Dropdowns',
-        url: '/buttons/dropdowns',
-        icon: 'icon-cursor'
-      },
-      {
-        name: 'Brand Buttons',
-        url: '/buttons/brand-buttons',
-        icon: 'icon-cursor'
-      }
-    ]
   },
   {
-    name: 'Charts',
-    url: '/charts',
+    name: 'Quản lý tài sản',
+    url: '/products',
     icon: 'icon-pie-chart'
   },
   {
-    name: 'Icons',
+    name: 'Quản lý nguồn vốn',
     url: '/icons',
     icon: 'icon-star',
     children: [
@@ -182,7 +108,7 @@ export const navItems: NavData[] = [
     ]
   },
   {
-    name: 'Notifications',
+    name: 'Quản lý thu chi',
     url: '/notifications',
     icon: 'icon-bell',
     children: [
@@ -217,10 +143,10 @@ export const navItems: NavData[] = [
   },
   {
     title: true,
-    name: 'Extras',
+    name: 'Thống kê',
   },
   {
-    name: 'Pages',
+    name: 'Thống kê',
     url: '/pages',
     icon: 'icon-star',
     children: [
@@ -247,28 +173,120 @@ export const navItems: NavData[] = [
     ]
   },
   {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
+    name: 'Báo cáo',
+    url: '/pages',
+    icon: 'icon-bell',
+    children: [
+      {
+        name: 'Login',
+        url: '/login',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Register',
+        url: '/register',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Error 404',
+        url: '/404',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Error 500',
+        url: '/500',
+        icon: 'icon-star'
+      }
+    ]
   },
   {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
+    name: 'Lợi nhuận',
+    url: '/pages',
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Login',
+        url: '/login',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Register',
+        url: '/register',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Error 404',
+        url: '/404',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Error 500',
+        url: '/500',
+        icon: 'icon-star'
+      }
+    ]
   },
   {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
-  }
+    name: 'Giao dịch trong ngày',
+    url: '/pages',
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Login',
+        url: '/login',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Register',
+        url: '/register',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Error 404',
+        url: '/404',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Error 500',
+        url: '/500',
+        icon: 'icon-star'
+      }
+    ]
+  },
+  {
+    title: true,
+    name: 'Quản lý hệ thống',
+  },
+  {
+    name: 'Cấu hình tài sản',
+    url: '/pages',
+    icon: 'icon-star',
+    children: [
+    ]
+  },
+  {
+    name: 'Quản lý log',
+    url: '/pages',
+    icon: 'icon-star',
+    children: [
+    ]
+  },
+  {
+    name: 'Quản lý mẫu hợp đồng',
+    url: '/pages',
+    icon: 'icon-star',
+    children: [
+    ]
+  },
+  // {
+  //   name: 'Báo cáo',
+  //   url: '/dashboard',
+  //   icon: 'icon-ban',
+  //   badge: {
+  //     variant: 'secondary',
+  //     text: 'NEW'
+  //   },
+  //   attributes: { disabled: true },
+  // },
+
 ];

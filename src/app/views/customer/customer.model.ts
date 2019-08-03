@@ -1,25 +1,18 @@
-export interface Me {
+
+export interface Description {
   job: string;
   salary: number;
   company: string;
   contact_people: string;
   contact_phone: string;
-}
-
-export interface Other {
   father_name: string;
   father_phone: string;
   mother_name: string;
   mother_phone: string;
 }
 
-export interface Description {
-  me: Me;
-  other: Other;
-}
-
 export interface Customer {
-  description: Description;
+  description: Description[];
   _id: string;
   username: string;
   fullname: string;

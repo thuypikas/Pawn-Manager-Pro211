@@ -47,20 +47,20 @@ export const routes: Routes = [
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Cầm đồ 299'
     },
     children: [
       {
-        path: 'base',
-        loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
+        path: 'customer',
+        loadChildren: () => import('./views/customer/customer.module').then(m => m.CustomerModule)
       },
       {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
+        path: 'staff',
+        loadChildren: () => import('./views/staff/staff.module').then(m => m.StaffModule)
       },
       {
-        path: 'charts',
-        loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
+        path: 'products',
+        loadChildren: () => import('./views/product/product.module').then(m => m.ProductModule)
       },
       {
         path: 'dashboard',
@@ -75,8 +75,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
       },
       {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
+        path: 'pawn',
+        loadChildren: () => import('./views/pawn/pawn.module').then(m => m.PawnModule)
       },
       {
         path: 'widgets',

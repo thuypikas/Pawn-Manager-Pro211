@@ -1,32 +1,32 @@
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {NgModule} from '@angular/core';
 
-import { ButtonsComponent } from './buttons.component';
-import { BrandButtonsComponent } from './brand-buttons.component';
+import {StaffComponent} from './staff.component';
 
 // Dropdowns Component
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { DropdownsComponent } from './dropdowns.component';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 
 // Buttons Routing
-import { ButtonsRoutingModule } from './buttons-routing.module';
+import {StaffRoutingModule} from './staff-routing.module';
 import {ModalModule} from 'ngx-bootstrap';
+import {CreateStaffComponent} from './create-staff/create-staff.component';
 
 // Angular
 
 @NgModule({
   imports: [
     CommonModule,
-    ButtonsRoutingModule,
+    StaffRoutingModule,
     BsDropdownModule.forRoot(),
     FormsModule,
     ModalModule.forRoot()
   ],
   declarations: [
-    ButtonsComponent,
-    DropdownsComponent,
-    BrandButtonsComponent
-  ]
+    StaffComponent,
+    CreateStaffComponent,
+  ],
+  entryComponents: [CreateStaffComponent]
 })
-export class ButtonsModule { }
+export class StaffModule {
+}

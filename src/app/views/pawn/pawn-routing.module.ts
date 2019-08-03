@@ -1,34 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ColorsComponent } from './colors.component';
-import { TypographyComponent } from './typography.component';
+import { OrderComponent } from './order.component';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Theme'
+      title: 'Cầm đồ'
     },
     children: [
       {
         path: '',
-        redirectTo: 'colors'
+        redirectTo: 'order'
       },
       {
-        path: 'colors',
-        component: ColorsComponent,
+        path: 'order',
+        component: OrderComponent,
         data: {
-          title: 'Colors'
+          title: 'Tạo đơn hàng'
         }
       },
-      {
-        path: 'typography',
-        component: TypographyComponent,
-        data: {
-          title: 'Typography'
-        }
-      }
     ]
   }
 ];
@@ -37,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ThemeRoutingModule {}
+export class PawnRoutingModule {}

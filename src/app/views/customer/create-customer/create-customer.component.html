@@ -1,0 +1,160 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{action}} khách hàng</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalAdd.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formCustomer" [ngClass]="{'visiabled': type == 'delete'}">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Thông tin cơ bản</strong>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-md-2 col-form-label" for="file-input">Ảnh</label>
+            <div class="col-md-10">
+              <input type="text" formControlName="avatar" id="file-input" name="file-input">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label>Họ và tên</label>
+              <input type="text" class="form-control" formControlName="fullname" id="company" placeholder="Họ và tên">
+            </div>
+            <div class="form-group col-sm-6">
+              <label class="col-md-3 col-form-label" for="inline-radios">Giới tính</label>
+              <div class="col-md-9 col-form-label">
+                <div class="form-check form-check-inline mr-1" id="inline-radios">
+                  <input class="form-check-input" type="radio" formControlName="gender" value="false" id="inlineRadio1">
+                  <label class="form-check-label" for="inlineRadio1">Nam</label>
+                </div>
+                <div class="form-check form-check-inline mr-1">
+                  <input class="form-check-input" type="radio" formControlName="gender" value="true" id="inlineRadio2">
+                  <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <label>Số CMT</label>
+              <input type="text" class="form-control" formControlName="identification" id="vat"
+                     placeholder="Chứng minh thư">
+            </div>
+            <div class="form-group col-sm-8">
+              <label>Địa chỉ</label>
+              <input type="text" class="form-control" formControlName="address" id="street" placeholder="Địa chỉ">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <label>Ngày sinh</label>
+              <input type="date" class="form-control" formControlName="birthday" placeholder="Ngày sinh">
+            </div>
+            <div class="form-group col-sm-4">
+              <label>Ngày cấp</label>
+              <input type="date" class="form-control" formControlName="created_date" placeholder="Ngày cấp">
+            </div>
+            <div class="form-group col-sm-4">
+              <label>Nơi cấp</label>
+              <input type="text" class="form-control" formControlName="created_address" placeholder="Nơi cấp">
+            </div>
+          </div><!--/.row-->
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <label>Số điện thoại</label>
+              <input type="text" class="form-control" formControlName="phone" placeholder="Số điện thoại">
+            </div>
+            <div class="form-group col-sm-4">
+              <label>Email</label>
+              <input type="text" class="form-control" formControlName="email" placeholder="Email">
+            </div>
+            <div class="form-group col-sm-4">
+              <label>Hộ khẩu thường trú</label>
+              <input type="textarea" rows="2" class="form-control" formControlName="permanent_address"
+                     placeholder="Hộ khẩu thường trú">
+            </div>
+          </div><!--/.row-->
+        </div>
+      </div>
+    </div><!--/.col-->
+    <div class="row">
+      <!--      <div class="col-sm-12">-->
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Thông tin thêm</strong>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-sm-4">
+                <label>Nghề nghiệp</label>
+                <input type="text" class="form-control" formControlName="job" placeholder="Nghề nghiệp">
+              </div>
+              <div class="form-group col-sm-4">
+                <label>Thu nhập</label>
+                <input type="text" class="form-control" formControlName="salary" placeholder="Thu nhập">
+              </div>
+              <div class="form-group col-sm-4">
+                <label>Nơi làm việc</label>
+                <input type="text" class="form-control" formControlName="company" placeholder="Nơi làm việc">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label>Người liên hệ</label>
+                <input type="text" class="form-control" formControlName="contact_people" placeholder="Người liên hệ">
+              </div>
+              <div class="form-group col-sm-6">
+                <label>Điện thoại liên hệ</label>
+                <input type="text" class="form-control" formControlName="contact_phone"
+                       placeholder="Điện thoại liên hệ">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Thành phần gia đình</strong>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label>Họ tên bố</label>
+                <input type="text" class="form-control" formControlName="father_name" placeholder="Họ tên bố">
+              </div>
+              <div class="form-group col-sm-6">
+                <label>Số điện thoại bố</label>
+                <input type="text" class="form-control" formControlName="father_phone" placeholder="Số điện thoại bố">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label>Họ tên mẹ</label>
+                <input type="text" class="form-control" formControlName="mother_name" placeholder="Họ tên mẹ">
+              </div>
+              <div class="form-group col-sm-6">
+                <label>Số điện thoại mẹ</label>
+                <input type="text" class="form-control" formControlName="mother_phone" placeholder="Số điện thoại mẹ">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn" [ngClass]="{'btn-success': type == 'add',
+  'btn-primary': type == 'edit',
+  'btn-danger': type == 'delete'}"
+          (click)="submit()">{{action}}</button>
+  <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalAdd.hide()">Đóng</button>
+</div>

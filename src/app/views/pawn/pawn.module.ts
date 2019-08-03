@@ -2,20 +2,26 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ColorsComponent } from './colors.component';
-import { TypographyComponent } from './typography.component';
+import { OrderComponent } from './order.component';
 
-// Theme Routing
-import { ThemeRoutingModule } from './theme-routing.module';
+// Pawn Routing
+import { PawnRoutingModule } from './pawn-routing.module';
+import { CreateOrderComponent } from './create-order/create-order.component';
+import {BsModalService, ModalModule} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    PawnRoutingModule,
+    ModalModule.forRoot()
   ],
   declarations: [
-    ColorsComponent,
-    TypographyComponent
-  ]
+    OrderComponent,
+    CreateOrderComponent
+  ],
+  entryComponents: [
+    CreateOrderComponent
+  ],
+  providers: [BsModalService]
 })
-export class ThemeModule { }
+export class PawnModule { }

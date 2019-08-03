@@ -1,34 +1,37 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { getStyle, rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities';
+import {Component, Inject, OnInit} from '@angular/core';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {CreateOrderComponent} from './create-order/create-order.component';
+
 
 @Component({
-  templateUrl: 'colors.component.html'
+  templateUrl: 'order.component.html'
 })
-export class ColorsComponent implements OnInit {
-  constructor(@Inject(DOCUMENT) private _document: any) {}
+export class OrderComponent implements OnInit {
+  bsModalRef: BsModalRef;
+  dataTable = [
+    {id: 5, name: 'Nguyen Thi Thu Thuy', nameStaff: 'Tran Trung Hieu', account: 'thuyntt', status: 'n'},
+    {id: 4, name: 'Nguyen Thi Thu', nameStaff: 'Tran Trung Hieu', account: 'thuyntt', status: 'n'},
+    {id: 3, name: 'Nguyen Thu Thuy', nameStaff: 'Tran Trung Hieu', account: 'thuyntt', status: 'n'},
+  ];
 
-  public themeColors(): void {
-    Array.from(this._document.querySelectorAll('.pawn-color')).forEach((el: HTMLElement) => {
-      const background = getStyle('background-color', el);
-      const table = this._document.createElement('table');
-      table.innerHTML = `
-        <table class="w-100">
-          <tr>
-            <td class="text-muted">HEX:</td>
-            <td class="font-weight-bold">${rgbToHex(background)}</td>
-          </tr>
-          <tr>
-            <td class="text-muted">RGB:</td>
-            <td class="font-weight-bold">${background}</td>
-          </tr>
-        </table>
-      `;
-      el.parentNode.appendChild(table);
+  constructor(
+    private modalService: BsModalService
+) {
+  }
+
+  ngOnInit() {
+  }
+
+  actionOder(type, data: any = null) {
+    this.bsModalRef = this.modalService.show(CreateOrderComponent, {
+      initialState: {
+        type: type,
+        data: data
+      },
+      class: 'modal-lg'
     });
   }
 
-  ngOnInit(): void {
-    this.themeColors();
+  payMoney() {
   }
 }
