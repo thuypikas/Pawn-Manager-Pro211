@@ -7,13 +7,18 @@ import { OrderComponent } from './order.component';
 // Pawn Routing
 import { PawnRoutingModule } from './pawn-routing.module';
 import { CreateOrderComponent } from './create-order/create-order.component';
-import {BsModalService, ModalModule} from 'ngx-bootstrap';
+import {BsDropdownModule, BsModalService, ModalModule} from 'ngx-bootstrap';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     PawnRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    FormsModule,
+    ModalModule.forRoot(),
+    ReactiveFormsModule
   ],
   declarations: [
     OrderComponent,

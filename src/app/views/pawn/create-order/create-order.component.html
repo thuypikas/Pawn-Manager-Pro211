@@ -1,1 +1,34 @@
-<p>create-order works!</p>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{action}} hợp đồng</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalAdd.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formOrder" [ngClass]="{'visiable': type == 'delete'}">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Thông tin cơ bản</strong>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <label>Lựa chọn khách hàng</label>
+              <select class="custom-select" [(ngModel)]="selected" (ngModelChange)="onOptionsSelected()" formControlName="customerName">
+                <option *ngFor="let option of customer" [value]="option._id">{{option.fullname}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn" [ngClass]="{'btn-success': type == 'add',
+  'btn-primary': type == 'edit',
+  'btn-danger': type == 'delete'}"
+          (click)="submit()">{{action}}</button>
+  <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalAdd.hide()">Đóng</button>
+</div>

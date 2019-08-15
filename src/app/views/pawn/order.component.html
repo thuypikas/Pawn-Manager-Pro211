@@ -4,7 +4,7 @@
       <i class="icon-drop"></i> Tạo đơn hàng
     </div>
     <div class="card-body">
-      <button type="button" (click)="actionOder('add')" class="btn btn-info btn-xs pull-right mb-3"><span
+      <button type="button" (click)="actionOrder('add')" class="btn btn-info btn-xs pull-right mb-3"><span
         class="fa fa-plus-circle"></span> Tạo hợp đồng
       </button>
       <table class="table">
@@ -22,20 +22,17 @@
         <tbody>
         <tr *ngFor="let item of dataTable; let i = index">
           <td class="text-center">{{i + 1}}</td>
-          <td class="text-center">{{item.id}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.nameStaff}}</td>
-          <td>{{item.account}}</td>
+          <td class="text-center">{{item._id}}</td>
+          <td>{{findCustomerNameById(item.customer_id)}}</td>
+          <td>{{findStaffNameById(item.staff_id)}}</td>
+          <td>{{findProductNameById(item.product_id)}}</td>
+          <td>{{findStatusNameByCode(item.status)}}</td>
           <td>
-            <button class="btn btn-info btn-xs" (click)="payMoney()"><span
+            <button class="btn btn-info btn-xs" (click)="actionOrder('edit', item)"><span
               class="fa fa-edit"></span></button>
-          </td>
-          <td>
-            <button class="btn btn-info btn-xs" (click)="actionOder('edit', item)"><span
-              class="fa fa-edit"></span></button>
-            <button (click)="actionOder('delete', item)" class="btn btn-danger btn-xs"><span
+            <button (click)="actionOrder('delete', item)" class="btn btn-danger btn-xs"><span
               class="fa fa-remove"></span></button>
-            <button (click)="actionOder('print', item)" class="btn btn-warning btn-xs"><span
+            <button (click)="actionOrder('print', item)" class="btn btn-warning btn-xs"><span
               class="fa fa-print"></span></button>
           </td>
         </tr>
