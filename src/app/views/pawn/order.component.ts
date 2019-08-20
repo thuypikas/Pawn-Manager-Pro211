@@ -38,7 +38,7 @@ export class OrderComponent implements OnInit {
       initialState: {
         type: type,
         data: data,
-        buttonClicked: this.modalButtonClicked.bind(data)
+        buttonClicked: this.modalButtonClicked.bind(this)
       },
       class: 'modal-lg'
     });
@@ -102,6 +102,7 @@ export class OrderComponent implements OnInit {
   }
 
   modalButtonClicked(data) {
+    console.log('>>>', data);
     if (data) {
       this.getAllOrder();
     }

@@ -10,7 +10,7 @@ export class CustomerService {
   constructor(private http: HttpClient) {
   }
 
-  baseurl = 'https://349000fa.ngrok.io/';
+  baseurl = 'https://a798cdcc.ngrok.io/';
 
   getAllCustomer() {
     return this.http.get<Customer[]>(this.baseurl + 'customers');

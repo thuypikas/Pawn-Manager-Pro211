@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MessengerRoutingModule} from './messenger-routing.module';
-import {ModalModule} from 'ngx-bootstrap';
+import {BsDropdownModule, ModalModule} from 'ngx-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MessengerComponent } from './messenger.component';
 import { CreateMessengerComponent } from './create-messenger/create-messenger.component';
@@ -15,7 +15,8 @@ import { CreateMessengerComponent } from './create-messenger/create-messenger.co
     MessengerRoutingModule,
     ModalModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
   ],
   entryComponents: [CreateMessengerComponent]
 })

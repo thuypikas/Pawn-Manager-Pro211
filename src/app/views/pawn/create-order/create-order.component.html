@@ -15,9 +15,55 @@
           <div class="row">
             <div class="form-group col-sm-4">
               <label>Lựa chọn khách hàng</label>
-              <select class="custom-select" [(ngModel)]="selected" (ngModelChange)="onOptionsSelected()" formControlName="customerName">
+              <select class="custom-select" [(ngModel)]="selected" (ngModelChange)="onOptionsSelected()" formControlName="customer_id">
                 <option *ngFor="let option of customer" [value]="option._id">{{option.fullname}}</option>
               </select>
+            </div>
+            <div class="form-group col-sm-4"></div>
+            <div class="form-group col-sm-4">
+              <label>Lựa chọn tài sản</label>
+              <select class="custom-select" [(ngModel)]="selectedProduct" (ngModelChange)="onOptions()" formControlName="product_id">
+                <option *ngFor="let option of product" [value]="option._id">{{option.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label>Ngày vay</label>
+              <input type="date" class="form-control" formControlName="created_date" placeholder="">
+              <br>
+              <label>Số tháng vay</label>
+              <input type="number" class="form-control" formControlName="month" placeholder="">
+              <br>
+              <label>Số tiền vay</label>
+              <input type="number" class="form-control" formControlName="loan" placeholder="">
+              <br>
+              <label>Lãi xuất</label>
+              <select class="form-control" formControlName="interest_rate">
+                <option [value]="2000">2.000 VNĐ</option>
+                <option [value]="3000">3.000 VNĐ</option>
+              </select>
+              <br>
+              <label>Lãi tạm tính</label>
+              <input type="number" readonly class="form-control" formControlName="interest" placeholder="">
+              <br>
+              <button (click)="onCalculator()">Tính toán</button>
+            </div>
+            <div class="form-group col-sm-6">
+              <label>Người tạo hợp đồng</label>
+              <select class="custom-select" [(ngModel)]="selectedStaff" (ngModelChange)="onOptionsStaff()" formControlName="staff_id">
+                <option *ngFor="let option of staff" [value]="option._id">{{option.fullname}}</option>
+              </select>
+              <br>
+              <label>Tổng tiền phải thanh toán</label>
+              <input type="number" class="form-control" readonly formControlName="total_loan" placeholder="">
+              <br>
+              <label>Lãi tạm tính(<i>thành tiền</i>): {{interest_format}}</label>
+              <label>Lãi tạm tính(<i>thành chữ</i>): {{interest_vi}}</label>
+
+              <label>Tổng tiền tạm tính(<i>thành tiền</i>): {{total_loan_format}}</label>
+              <label>Tổng tiền tạm tính(<i>thành tiền</i>): {{total_loan_vi}}</label>
+
             </div>
           </div>
         </div>

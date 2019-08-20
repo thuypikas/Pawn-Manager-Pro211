@@ -14,7 +14,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     PawnRoutingModule,
-    ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     FormsModule,
     ModalModule.forRoot(),

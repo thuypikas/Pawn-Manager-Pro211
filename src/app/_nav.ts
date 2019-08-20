@@ -266,10 +266,8 @@ export const navItems: NavData[] = [
   },
   {
     name: 'Quản lý log',
-    url: '/pages',
+    url: '/messenger',
     icon: 'icon-star',
-    children: [
-    ]
   },
   {
     name: 'Quản lý mẫu hợp đồng',
@@ -278,15 +276,5 @@ export const navItems: NavData[] = [
     children: [
     ]
   },
-  // {
-  //   name: 'Báo cáo',
-  //   url: '/dashboard',
-  //   icon: 'icon-ban',
-  //   badge: {
-  //     variant: 'secondary',
-  //     text: 'NEW'
-  //   },
-  //   attributes: { disabled: true },
-  // },
 
 ];
