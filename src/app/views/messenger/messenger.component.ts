@@ -36,7 +36,7 @@ export class MessengerComponent implements OnInit {
         data: data,
         buttonClicked: this.modalButtonClicked.bind(this)
       },
-      class: 'modal-lg'
+      class: 'modal-md'
     });
   }
 
@@ -49,22 +49,19 @@ export class MessengerComponent implements OnInit {
   getListCustomer() {
     this.serviceCustomer.getAllCustomer().subscribe(res => {
       this.listCustomer = res;
-      console.log('resssss', res);
-      console.log('listCustomer', this.listCustomer);
     });
   }
 
-  findCustomerNameById(id) {
+  findCustomerNameById(customer_id) {
     const res = this.listCustomer.find((e) => {
-      return e._id === id;
+      return customer_id = e._id;
     });
-    console.log('res', res);
     return res ? res.fullname : null;
   }
 
   findStaffNameById(id) {
     const res = this.listStaff.find((e) => {
-      return e._id === id;
+      return id = e._id;
     });
     return res ? res.fullname : null;
   }

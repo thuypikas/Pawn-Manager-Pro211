@@ -1,46 +1,43 @@
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-align-justify"></i> Danh sách tin nhắn
-  </div>
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Danh sách tin nhắn
+    </div>
 
-  <div class="card-body">
-    <button type="button" (click)="actionMessenger('add')" class="btn btn-info btn-xs pull-right mb-3"><span
-      class="fa fa-plus-circle"></span> Thêm tin nhắn</button>
-    <table class="table">
-      <thead>
-      <tr>
-        <th>STT</th>
-        <th>Người gửi</th>
-        <th>Người nhận</th>
-        <th>Thời gian</th>
-        <th>Nội dung</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let item of dataTable; let i = index">
-        <td> {{ i + 1 }}</td>
-        <td>{{findStaffNameById(item.staff_id)}}</td>
-        <td>{{findCustomerNameById(item.customer_id)}}{{item.customer_id}}</td>
-        <td>{{item.created_date | date: 'dd/MM/yyyy'}}</td>
-        <td>{{item.context}}</td>
-        <td>
-          <button (click)="actionMessenger('edit', item)" class='btn btn-info btn-xs'><span
-            class="fa fa-edit"></span></button>&nbsp;
-          <button (click)="actionMessenger('delete', item)" class="btn btn-danger btn-xs"><span
-            class="fa fa-remove"></span></button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-    <ul class="pagination justify-content-center">
-      <li class="page-item"><a class="page-link" href="#"><</a></li>
-      <li class="page-item active">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">4</a></li>
-      <li class="page-item"><a class="page-link" href="#">></a></li>
-    </ul>
+    <div class="card-body">
+      <button type="button" (click)="actionMessenger('add')" class="btn btn-info btn-xs pull-right mb-3"><span
+        class="fa fa-send"></span> Gửi tin nhắn
+      </button>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>STT</th>
+          <th>Người gửi</th>
+          <th>Người nhận</th>
+          <th>Thời gian</th>
+          <th>Nội dung</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of dataTable; let i = index">
+          <td> {{ i + 1 }}</td>
+          <td>{{findStaffNameById(item.staff_id)}}</td>
+          <td>{{findCustomerNameById(item.customer_id)}}</td>
+          <td>{{item.created_date | date: 'dd/MM/yyyy'}}</td>
+          <td>{{item.context}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#"><</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">></a></li>
+      </ul>
+    </div>
   </div>
 </div>
