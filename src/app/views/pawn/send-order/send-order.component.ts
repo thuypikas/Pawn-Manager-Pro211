@@ -38,10 +38,11 @@ export class SendOrderComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+
+
     this.getListCustomer();
     this.getListStaff();
     this.listData();
-    console.log(this.data);
     if (this.data != null) {
       this.formMess.patchValue({
         ...this.data,
@@ -49,27 +50,28 @@ export class SendOrderComponent implements OnInit {
         staff_id: this.data.staff_id,
         context: this.data.context
       });
+      this.selectCustomer = this.data.customer_id;
+      this.selectStaff = this.data.staff_id;
     }
   }
   buildForm() {
     this.formMess = this.fb.group({
-      customer_id: ['', Validators.required],
+      customerName: ['', Validators.required],
+      customer_id: [''],
+      staffName: ['', Validators.required],
       staff_id: ['', Validators.required],
       customer_phone: [''],
       context: ['', Validators.required],
       staff_phone: ['']
     });
+
   }
   getListCustomer() {
     this.serviceCustomer.getAllCustomer().subscribe(customer => {
-      console.log(customer);
       this.customer = customer;
     });
   }
 
-  onOptionsCustomer() {
-    this.filtered = this.customer.find(t => t.value == this.selectCustomer);
-  }
 
   getListStaff() {
     this.serviceStaff.getAllStaff().subscribe(res => {
@@ -77,9 +79,6 @@ export class SendOrderComponent implements OnInit {
     });
   }
 
-  onOptionsStaff() {
-    this.filterStaff = this.staff.find(t => t.value == this.selectStaff);
-  }
 
   findCustomerPhoneById(customer_id) {
     const res = this.customer.find((e) => {
@@ -118,17 +117,12 @@ export class SendOrderComponent implements OnInit {
     this.formMess.get('customer_phone').setValue(this.findCustomerPhoneById(this.formMess.get('customer_id')));
     this.formMess.get('staff_phone').setValue(this.findStaffPhoneById(this.formMess.get('staff_id')));
     this.formMess.get('customer_id').setValue(this.findCustomerNameById(this.formMess.get('customer_id')));
-    this.formMess.get('staff_phone').setValue(this.findStaffPhoneById(this.formMess.get('staff_id')));
+    this.formMess.get('staff_id').setValue(this.findStaffNameById(this.formMess.get('staff_id')));
     const data: any = this.formMess.value;
-    if (this.type == 'send') {
-      this.serviceOrder.updateOrder(data).subscribe(res => {
+      this.serviceMess.addMessages(data).subscribe(res => {
+        this.toastr.success('Cảnh bảo đóng tiền thành công');
+        this.modalAdd.hide();
         console.log('rr', res);
       });
-      // this.serviceMess.addMessages(data).subscribe(res => {
-      //   console.log('f', res);
-      //   this.toastr.success('Gửi thành công!');
-      //   this.modalAdd.hide();
-      // });
-    }
   }
 }

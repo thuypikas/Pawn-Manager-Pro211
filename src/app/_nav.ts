@@ -49,11 +49,6 @@ export const navItems: NavData[] = [
     icon: 'icon-drop'
   },
   {
-    name: 'Nợ phải thu',
-    url: '/pawn/typography',
-    icon: 'icon-pencil'
-  },
-  {
     title: true,
     name: 'Quản lý'
   },
@@ -97,25 +92,8 @@ export const navItems: NavData[] = [
     icon: 'icon-bell',
   },
   {
-    name: 'Lợi nhuận',
-    url: '/pages',
-    icon: 'icon-star',
-  },
-  {
-    name: 'Giao dịch trong ngày',
-    url: '/pages',
-    icon: 'icon-star',
-  },
-  {
     title: true,
     name: 'Quản lý hệ thống',
-  },
-  {
-    name: 'Cấu hình tài sản',
-    url: '/pages',
-    icon: 'icon-star',
-    children: [
-    ]
   },
   {
     name: 'Quản lý tin nhắn',
@@ -123,11 +101,9 @@ export const navItems: NavData[] = [
     icon: 'icon-star',
   },
   {
-    name: 'Quản lý mẫu hợp đồng',
-    url: '/pages',
+    name: 'Quản lý hợp đồng',
+    url: '/contract',
     icon: 'icon-star',
-    children: [
-    ]
   },
 
 ];

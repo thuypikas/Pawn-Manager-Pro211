@@ -83,8 +83,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/pawn/pawn.module').then(m => m.PawnModule)
       },
       {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
+        path: 'contract',
+        loadChildren: () => import('./views/contract/contract.module').then(m => m.ContractModule)
       }
     ]
   },
