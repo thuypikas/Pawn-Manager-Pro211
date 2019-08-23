@@ -5,6 +5,9 @@ import {PawnService} from './pawn.service';
 import {CustomerService} from '../customer/customer.service';
 import {StaffService} from '../staff/staff.service';
 import {ProductService} from '../product/product.service';
+import {PrintOrderComponent} from './print-order/print-order.component';
+import {SendOrderComponent} from './send-order/send-order.component';
+import {PayOrderComponent} from './pay-order/pay-order.component';
 
 
 @Component({
@@ -44,6 +47,34 @@ export class OrderComponent implements OnInit {
     });
   }
 
+  actionPrint(type, data: any = null) {
+    this.bsModalRef = this.modalService.show(PrintOrderComponent, {
+      initialState: {
+        type: type,
+        data: data,
+      },
+      class: 'modal-sm'
+    });
+  }
+  actionSend(type, data) {
+    this.bsModalRef = this.modalService.show(SendOrderComponent, {
+      initialState: {
+        type: type,
+        data: data,
+        buttonClicked: this.modalButtonClicked.bind(this)
+      },
+      class: 'modal-md'
+    });
+  }
+  actionPay(type, data) {
+    this.bsModalRef = this.modalService.show(PayOrderComponent, {
+      initialState: {
+        type: type,
+        data: data,
+      },
+      class: 'modal-md'
+    });
+  }
   getListCustomer() {
     this.serviceCustomer.getAllCustomer().subscribe(res => {
       this.listCus = res;
@@ -64,21 +95,21 @@ export class OrderComponent implements OnInit {
 
   findCustomerNameById(id) {
     const res = this.listCus.find((e) => {
-      return e._id === id;
+      return id = e._id;
     });
     return res ? res.fullname : null;
   }
 
   findStaffNameById(id) {
     const res = this.listStaff.find((e) => {
-      return e._id === id;
+      return id = e._id;
     });
     return res ? res.fullname : null;
   }
 
   findProductNameById(id) {
     const res = this.listProduct.find((e) => {
-      return e._id === id;
+      return id = e._id;
     });
     return res ? res.name : null;
   }
@@ -93,7 +124,6 @@ export class OrderComponent implements OnInit {
     }
   }
 
-
   getAllOrder() {
     this.serviceOrder.getAllOrder().subscribe(res => {
       console.log(res);
@@ -102,7 +132,6 @@ export class OrderComponent implements OnInit {
   }
 
   modalButtonClicked(data) {
-    console.log('>>>', data);
     if (data) {
       this.getAllOrder();
     }

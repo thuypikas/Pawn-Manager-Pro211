@@ -9,6 +9,9 @@ import { PawnRoutingModule } from './pawn-routing.module';
 import { CreateOrderComponent } from './create-order/create-order.component';
 import {BsDropdownModule, BsModalService, ModalModule} from 'ngx-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PrintOrderComponent } from './print-order/print-order.component';
+import { SendOrderComponent } from './send-order/send-order.component';
+import { PayOrderComponent } from './pay-order/pay-order.component';
 
 @NgModule({
   imports: [
@@ -21,10 +24,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   declarations: [
     OrderComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    PrintOrderComponent,
+    SendOrderComponent,
+    PayOrderComponent
   ],
   entryComponents: [
-    CreateOrderComponent
+    CreateOrderComponent,
+    PrintOrderComponent,
+    SendOrderComponent,
+    PayOrderComponent
   ],
   providers: [BsModalService]
 })

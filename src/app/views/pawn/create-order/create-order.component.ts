@@ -9,7 +9,6 @@ import {StaffService} from '../../staff/staff.service';
 import {PawnService} from '../pawn.service';
 
 @Component({
-  selector: 'create-order',
   templateUrl: './create-order.component.html',
   styleUrls: ['./create-order.component.css']
 })
@@ -55,14 +54,17 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
     } else if (this.type == 'delete') {
       this.action = 'Xóa';
     }
-    console.log(this.data);
+    console.log('t', this.data);
     if (this.data != null) {
       this.formOrder.patchValue({
         ...this.data,
         interest_format : this.data.interest_format,
         interest_vi: this.data.interest_vi,
         total_loan_format: this.data.total_loan_format,
-        total_loan_vi: this.data.total_loan_vi
+        total_loan_vi: this.data.total_loan_vi,
+        month: this.data.month,
+        interest_rate: this.data.interest_rate,
+        customer_id: this.data.customer_id
       });
     }
   }
