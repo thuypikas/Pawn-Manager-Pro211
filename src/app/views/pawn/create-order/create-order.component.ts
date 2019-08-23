@@ -31,6 +31,7 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
   interest_format = '';
   total_loan_vi = '';
   total_loan_format = '';
+  submitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -72,9 +73,9 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
   buildForm() {
     this.formOrder = this.fb.group({
       _id: [0],
-      customer_id: [null],
-      product_id: [null],
-      staff_id: [null],
+      customer_id: [null, Validators.required],
+      product_id: [null, Validators.required],
+      staff_id: [null, Validators.required],
       created_date: [(new Date()).getFullYear(), Validators.required],
       loan: [null, Validators.required],
       interest: [null, Validators.required],
@@ -118,8 +119,10 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
   onOptionsStaff() {
     this.filterStaff = this.staff.filter(t => t.value == this.selectedStaff);
   }
+  get f() { return this.formOrder.controls; }
 
   submit() {
+    this.submitted = true;
     if (this.formOrder.invalid) {
       return;
     }
@@ -142,9 +145,7 @@ export class CreateOrderComponent implements OnInit, OnDestroy {
       total_loan_vi: formData.total_loan_vi
     }
     if (this.type == 'add') {
-      console.log('d', this.type);
       this.serviceOrder.addOrder(data).subscribe(add => {
-        console.log(add);
         this.toastr.success('Thêm thành công');
         this.buttonClicked(true);
         this.modalAdd.hide();

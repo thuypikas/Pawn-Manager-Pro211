@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Routes} from '@angular/router';
-import {MessengerComponent} from '../messenger/messenger.component';
+import {RouterModule, Routes} from '@angular/router';
+import {ContractComponent} from './contract.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MessengerComponent,
+    component: ContractComponent,
     data: {
       title: 'Quản lý hợp đồng'
     },
@@ -15,8 +14,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class ContractRoutingModule { }

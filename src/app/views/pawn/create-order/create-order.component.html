@@ -15,45 +15,73 @@
           <div class="row">
             <div class="form-group col-sm-4">
               <label>Lựa chọn khách hàng</label>
-              <select class="custom-select" [(ngModel)]="selected" (ngModelChange)="onOptionsSelected()" formControlName="customer_id">
+              <select class="custom-select" [(ngModel)]="selected" (ngModelChange)="onOptionsSelected()"
+                      formControlName="customer_id" [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }">
                 <option *ngFor="let option of customer" [value]="option._id">{{option.fullname}}</option>
               </select>
+              <div *ngIf="submitted && f.customer_id.errors" class="invalid-feedback">
+                <div *ngIf="f.customer_id.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
             </div>
             <div class="form-group col-sm-4"></div>
             <div class="form-group col-sm-4">
               <label>Lựa chọn tài sản</label>
-              <select class="custom-select" [(ngModel)]="selectedProduct" (ngModelChange)="onOptions()" formControlName="product_id">
+              <select class="custom-select" [(ngModel)]="selectedProduct" (ngModelChange)="onOptions()"
+                      formControlName="product_id" [ngClass]="{ 'is-invalid': submitted && f.product_id.errors }">
                 <option *ngFor="let option of product" [value]="option._id">{{option.name}}</option>
               </select>
+              <div *ngIf="submitted && f.product_id.errors" class="invalid-feedback">
+                <div *ngIf="f.product_id.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="form-group col-sm-6">
               <label>Ngày vay</label>
-              <input type="date" class="form-control" formControlName="created_date" placeholder="">
+              <input type="date" class="form-control" formControlName="interest"
+                     [ngClass]="{ 'is-invalid': submitted && f.created_date.errors }">
+              <div *ngIf="submitted && f.created_date.errors" class="invalid-feedback">
+                <div *ngIf="f.created_date.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
               <br>
               <label>Số tháng vay</label>
-              <input type="number" class="form-control" formControlName="month" placeholder="">
+              <input type="number" min="0" class="form-control" formControlName="month"
+                     [ngClass]="{ 'is-invalid': submitted && f.month.errors }">
+              <div *ngIf="submitted && f.month.errors" class="invalid-feedback">
+                <div *ngIf="f.month.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
               <br>
               <label>Số tiền vay</label>
-              <input type="number" class="form-control" formControlName="loan" placeholder="">
+              <input type="number" min="0" class="form-control" formControlName="loan" placeholder="">
               <br>
               <label>Lãi xuất</label>
-              <select class="form-control" formControlName="interest_rate">
+              <select class="form-control" formControlName="interest_rate"
+                      [ngClass]="{ 'is-invalid': submitted && f.interest_rate.errors }">
                 <option [value]="2000">2.000 VNĐ</option>
                 <option [value]="3000">3.000 VNĐ</option>
               </select>
+              <div *ngIf="submitted && f.interest_rate.errors" class="invalid-feedback">
+                <div *ngIf="f.interest_rate.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
               <br>
               <label>Lãi tạm tính</label>
-              <input type="number" readonly class="form-control" formControlName="interest" placeholder="">
+              <input type="number" readonly class="form-control" formControlName="interest"
+                     [ngClass]="{ 'is-invalid': submitted && f.interest.errors }">
+              <div *ngIf="submitted && f.interest.errors" class="invalid-feedback">
+                <div *ngIf="f.interest.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
               <br>
               <button (click)="onCalculator()">Tính toán</button>
             </div>
             <div class="form-group col-sm-6">
               <label>Người tạo hợp đồng</label>
-              <select class="custom-select" [(ngModel)]="selectedStaff" (ngModelChange)="onOptionsStaff()" formControlName="staff_id">
+              <select class="custom-select" [(ngModel)]="selectedStaff" (ngModelChange)="onOptionsStaff()"
+                      formControlName="staff_id" [ngClass]="{ 'is-invalid': submitted && f.staff_id.errors }">
                 <option *ngFor="let option of staff" [value]="option._id">{{option.fullname}}</option>
               </select>
+              <div *ngIf="submitted && f.staff_id.errors" class="invalid-feedback">
+                <div *ngIf="f.staff_id.errors.required">Nhập đầy đủ các thông tin</div>
+              </div>
               <br>
               <label>Tổng tiền phải thanh toán</label>
               <input type="number" class="form-control" readonly formControlName="total_loan" placeholder="">

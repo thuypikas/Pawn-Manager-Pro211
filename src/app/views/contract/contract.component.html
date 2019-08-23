@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="icon-drop"></i> Quản lý hợp đồng
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã hợp đồng</th>
+          <th>Tên khách hàng</th>
+          <th>Tên nhân viên</th>
+          <th>Tên tài sản</th>
+          <th>Trạng thái</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of dataTable; let i = index">
+          <td class="text-center">{{i + 1}}</td>
+          <td class="">{{item._id}}</td>
+          <td>{{findCustomerNameById(item.customer_id)}}</td>
+          <td>{{findStaffNameById(item.staff_id)}}</td>
+          <td>{{findProductNameById(item.product_id)}}</td>
+          <td>{{findStatusNameByCode(item.status)}}</td>
+          <td>
+            <button class="btn btn-info btn-xs" (click)="actionAccept('accept', item)"><span
+              class="fa fa-check"></span></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#"><</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

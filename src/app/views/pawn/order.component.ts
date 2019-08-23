@@ -126,8 +126,7 @@ export class OrderComponent implements OnInit {
 
   getAllOrder() {
     this.serviceOrder.getAllOrder().subscribe(res => {
-      console.log(res);
-      this.dataTable = res;
+      this.dataTable = res.filter(e => e.status === 1);
     });
   }
 
