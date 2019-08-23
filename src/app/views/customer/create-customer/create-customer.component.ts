@@ -37,7 +37,8 @@ export class CreateCustomerComponent implements OnInit {
     if (this.data != null) {
       this.formCustomer.patchValue({
         ...this.data,
-        gender: Boolean(this.data.gender)
+        gender: this.data.gender ,
+        birthday: this.data.birthday
       });
     }
   }
@@ -48,7 +49,7 @@ export class CreateCustomerComponent implements OnInit {
       fullname: ['', Validators.required],
       identification: ['', Validators.required],
       address: ['', Validators.required],
-      gender: [''],
+      gender: [false],
       birthday: [''],
       avatar: [''],
       created_date: [''],

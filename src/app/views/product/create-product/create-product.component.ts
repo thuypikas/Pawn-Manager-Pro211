@@ -7,7 +7,6 @@ import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
-  selector: 'create-product',
   templateUrl: './create-product.component.html',
   styleUrls: ['./create-product.component.css']
 })

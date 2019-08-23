@@ -43,6 +43,7 @@ export class CreateStaffComponent implements OnInit {
   }
   buildForm() {
     this.formStaff = this.fb.group({
+      _id: [''],
       username: ['', Validators.required],
       role: [false, Validators.required],
       fullname: ['', Validators.required],
@@ -50,8 +51,8 @@ export class CreateStaffComponent implements OnInit {
       gender: ['', Validators.required],
       identification: ['', Validators.required],
       address: ['', Validators.required],
-      birthday: [''],
-      created_date: [''],
+      birthday: [Date()],
+      created_date: [Date()],
       avatar: [''],
       created_address: [''],
       phone: [''],
