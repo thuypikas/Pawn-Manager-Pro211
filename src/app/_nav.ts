@@ -74,7 +74,7 @@ export const navItems: NavData[] = [
   },
   {
     name: 'Quản lý nguồn vốn',
-    url: '/icons',
+    url: '/capital',
     icon: 'icon-star',
   },
   {

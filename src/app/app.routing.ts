@@ -71,8 +71,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/messenger/messenger.module').then(m => m.MessengerModule)
       },
       {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
+        path: 'capital',
+        loadChildren: () => import('./views/capital/capital.module').then(m => m.CapitalModule)
       },
       {
         path: 'notifications',
