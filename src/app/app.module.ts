@@ -46,6 +46,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {NgxBootstrapSliderModule} from 'ngx-bootstrap-slider';
 import {LoginService} from './views/_services/login.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   imports: [
     BrowserModule,
@@ -64,6 +65,7 @@ import {LoginService} from './views/_services/login.service';
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
     ToastrModule.forRoot(
       {timeOut: 1000,
         positionClass: 'toast-top-right'}

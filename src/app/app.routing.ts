@@ -44,7 +44,7 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'default',
+    path: '',
     component: DefaultLayoutComponent,
     data: {
       title: 'Cầm đồ 299'
