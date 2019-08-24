@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { TabsModule, ModalModule } from 'ngx-bootstrap';
 import { RevenueExpenditureComponent } from './revenue-expenditure.component';
+import {ExcelService} from './excel.service';
+
 
 
 
@@ -18,6 +20,7 @@ import { RevenueExpenditureComponent } from './revenue-expenditure.component';
     ModalModule.forRoot(),
     ReactiveFormsModule,
     RevenueExpenditureRoutingModule
-  ]
+  ],
+  providers: [ExcelService]
 })
 export class RevenueExpenditureModule { }
