@@ -4,6 +4,7 @@ import {CapitalRoutingModule} from './capital-routing.module';
 import {CapitalComponent} from './capital.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ModalModule, TabsModule} from 'ngx-bootstrap';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -12,6 +13,7 @@ import {ModalModule, TabsModule} from 'ngx-bootstrap';
   imports: [
     CommonModule,
     FormsModule,
+    ChartsModule,
     TabsModule,
     ModalModule.forRoot(),
     ReactiveFormsModule,
