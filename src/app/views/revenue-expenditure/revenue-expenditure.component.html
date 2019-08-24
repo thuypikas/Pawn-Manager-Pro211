@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i> Quản lý thu chi
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên Nhân Viên</th>
+                <th>Ngày tạo</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of dataTable; let i = index">
+                <td> {{ i + 1 }}</td>
+                <td>{{findStaffNameById(item.staff_id)}}</td>
+                <td>{{item.date | date: 'dd/MM/yyyy'}}</td>
+                <td>{{findStatusNameByCode(item.status)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -74,7 +74,7 @@ export const navItems: NavData[] = [
   },
   {
     name: 'Quản lý thu chi',
-    url: '/notifications',
+    url: '/revenue-expenditure',
     icon: 'icon-bell',
   },
   {
