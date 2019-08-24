@@ -16,6 +16,7 @@ export class CreateProductComponent implements OnInit {
   data: any;
   buttonClicked: any;
   action: any = 'Thêm';
+  submitted = false;
   constructor(
     private fb: FormBuilder,
     private service: ProductService,
@@ -43,13 +44,15 @@ export class CreateProductComponent implements OnInit {
       name: ['', Validators.required],
       category_name: ['', Validators.required],
       status: [null, Validators.required],
-      desc: [''],
-      // images: [''],
+      desc: ['', Validators.required],
+      images: ['', Validators.required],
       createdAt: new Date(),
       updatedAt: Date,
     });
   }
+  get f() { return this.formProduct.controls; }
   submit() {
+    this.submitted = true;
     if (this.formProduct.invalid) {
       return;
     }

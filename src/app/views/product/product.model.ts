@@ -4,7 +4,7 @@ export interface Product {
   category_name: string;
   status: number;
   desc: string;
-  // images: string;
+  images: string;
   createdAt: Date;
   updatedAt: Date;
   __v: number;
