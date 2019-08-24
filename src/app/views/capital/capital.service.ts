@@ -11,7 +11,7 @@ export class CapitalService {
 
    }
 
-  baseurl = 'https://b4027799.ngrok.io/';
+  baseurl = 'https://c4ff6b3e.ngrok.io/';
 
   getAllCapital() {
     return this.http.get<Capital[]>(this.baseurl + 'capitals');

@@ -10,6 +10,7 @@ import {CustomerService} from './customer.service';
 export class CustomerComponent implements OnInit {
   dataTable: any[] = [];
   bsModalRef: BsModalRef;
+  searchText;
 
   constructor(
     private modalService: BsModalService,

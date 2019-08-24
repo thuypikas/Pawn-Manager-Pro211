@@ -10,7 +10,7 @@ export class MessengerService {
   constructor(private http: HttpClient) {
   }
 
-  baseurl = 'https://b4027799.ngrok.io/';
+  baseurl = 'https://c4ff6b3e.ngrok.io/';
 
   getAllMessages() {
     return this.http.get<Messages[]>(this.baseurl + 'messages');

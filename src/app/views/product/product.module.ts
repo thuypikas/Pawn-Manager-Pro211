@@ -8,6 +8,7 @@ import {CreateProductComponent} from './create-product/create-product.component'
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxBootstrapSliderModule} from 'ngx-bootstrap-slider';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {NgxBootstrapSliderModule} from 'ngx-bootstrap-slider';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxBootstrapSliderModule
+    NgxBootstrapSliderModule,
+    Ng2SearchPipeModule
   ],
   declarations: [ProductComponent, CreateProductComponent],
   entryComponents: [CreateProductComponent]

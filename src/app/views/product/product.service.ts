@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  baseurl = 'https://b4027799.ngrok.io/';
+  baseurl = 'https://c4ff6b3e.ngrok.io/';
 
   getAllProduct() {
     return this.http.get<Product[]>(this.baseurl + 'products');

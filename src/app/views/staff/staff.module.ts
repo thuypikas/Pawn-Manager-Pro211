@@ -11,6 +11,7 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {StaffRoutingModule} from './staff-routing.module';
 import {ModalModule} from 'ngx-bootstrap';
 import {CreateStaffComponent} from './create-staff/create-staff.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 // Angular
 
@@ -21,7 +22,8 @@ import {CreateStaffComponent} from './create-staff/create-staff.component';
     BsDropdownModule.forRoot(),
     FormsModule,
     ModalModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     StaffComponent,

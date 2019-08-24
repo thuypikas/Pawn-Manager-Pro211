@@ -3,6 +3,10 @@
     <i class="fa fa-pie-chart"></i>Quản lý tài sản
   </div>
   <div class="card-body">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Tìm kiếm theo mã tài sản">
+    </div>
+    <br>
     <button type="button" (click)="actionProduct('add')" class="btn btn-info btn-xs pull-right mb-3"><span
       class="fa fa-plus-circle"></span> Thêm tài sản
     </button>
@@ -20,7 +24,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of dataProductTable; let i = index">
+      <tr *ngFor="let item of dataProductTable | filter:searchText; let i = index">
         <td class="">{{i+1}}</td>
         <td class="">{{item._id}}</td>
         <td>{{item.name}}</td>
@@ -41,9 +45,6 @@
       <li class="page-item active">
         <a class="page-link" href="#">1</a>
       </li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">4</a></li>
       <li class="page-item"><a class="page-link" href="#">></a></li>
     </ul>
   </div>

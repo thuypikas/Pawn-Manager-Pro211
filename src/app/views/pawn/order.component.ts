@@ -19,6 +19,7 @@ export class OrderComponent implements OnInit {
   listCus: any = [];
   listStaff: any = [];
   listProduct: any = [];
+  searchText;
 
   constructor(
     private modalService: BsModalService,

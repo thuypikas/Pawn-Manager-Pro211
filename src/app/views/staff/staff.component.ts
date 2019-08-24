@@ -9,6 +9,7 @@ import {StaffService} from './staff.service';
 export class StaffComponent implements OnInit {
   bsModalRef: BsModalRef;
   dataTable: any = [];
+  searchText;
 
   constructor(
     private modalService: BsModalService,

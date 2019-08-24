@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.service.userLogin(data).subscribe(res => {
       if (res) {
         this.toastr.success('Login thành công');
-        this.router.navigate(['/default/dashboard']);
+        this.router.navigate(['/dashboard']);
       } else {
         this.toastr.error('username hoặc passwork không đúng');
       }

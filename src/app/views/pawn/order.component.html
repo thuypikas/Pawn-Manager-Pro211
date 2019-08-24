@@ -4,6 +4,10 @@
       <i class="icon-drop"></i> Tạo đơn hàng
     </div>
     <div class="card-body">
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Tìm kiếm theo mã">
+      </div>
+      <br>
       <button type="button" (click)="actionOrder('add')" class="btn btn-info btn-xs pull-right mb-3"><span
         class="fa fa-plus-circle"></span> Tạo hợp đồng
       </button>
@@ -20,7 +24,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let item of dataTable; let i = index">
+        <tr *ngFor="let item of dataTable | filter:searchText; let i = index">
           <td class="text-center">{{i + 1}}</td>
           <td class="">{{item._id}}</td>
           <td>{{findCustomerNameById(item.customer_id)}}</td>
@@ -43,9 +47,6 @@
         <li class="page-item active">
           <a class="page-link" href="#">1</a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">4</a></li>
         <li class="page-item"><a class="page-link" href="#">></a></li>
       </ul>
     </div>

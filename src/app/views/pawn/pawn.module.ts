@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PrintOrderComponent } from './print-order/print-order.component';
 import { SendOrderComponent } from './send-order/send-order.component';
 import { PayOrderComponent } from './pay-order/pay-order.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { PayOrderComponent } from './pay-order/pay-order.component';
     BsDropdownModule.forRoot(),
     FormsModule,
     ModalModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     OrderComponent,

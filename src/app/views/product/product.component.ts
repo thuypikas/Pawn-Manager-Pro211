@@ -9,6 +9,7 @@ import {ProductService} from './product.service';
 export class ProductComponent implements  OnInit {
   bsModalRef: BsModalRef;
   dataProductTable: any[] = [];
+  searchText;
 
   constructor(
     private modalService: BsModalService,

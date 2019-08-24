@@ -10,7 +10,7 @@ export class PawnService {
   constructor(private http: HttpClient) {
   }
 
-  baseurl = 'https://b4027799.ngrok.io/';
+  baseurl = 'https://c4ff6b3e.ngrok.io/';
 
   getAllOrder() {
     return this.http.get<Order[]>(this.baseurl + 'orders');

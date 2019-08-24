@@ -10,6 +10,7 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import {ModalModule} from 'ngx-bootstrap';
 import {CustomerComponent} from './customer.component';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
     CustomerRoutingModule,
     TabsModule,
     ModalModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     CustomerComponent,
