@@ -12,7 +12,7 @@ import { RegisterComponent } from './views/register/register.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -44,7 +44,7 @@ export const routes: Routes = [
     }
   },
   {
-    path: '',
+    path: 'default',
     component: DefaultLayoutComponent,
     data: {
       title: 'Cầm đồ 299'
