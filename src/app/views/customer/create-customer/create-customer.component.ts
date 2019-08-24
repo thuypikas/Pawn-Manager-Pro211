@@ -16,6 +16,7 @@ export class CreateCustomerComponent implements OnInit {
   formCustomer: FormGroup;
   buttonClicked: any;
   action: any = 'Thêm';
+  submitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -50,13 +51,13 @@ export class CreateCustomerComponent implements OnInit {
       identification: ['', Validators.required],
       address: ['', Validators.required],
       gender: [false],
-      birthday: [''],
+      birthday: ['', Validators.required],
       avatar: [''],
-      created_date: [''],
-      created_address: [''],
-      phone: [''],
+      created_date: ['', Validators.required],
+      created_address: ['', Validators.required],
+      phone: ['', Validators.required],
       email: [''],
-      permanent_address: [''],
+      permanent_address: ['', Validators.required],
       description: {},
       job: [''],
       salary: [''],
@@ -69,8 +70,10 @@ export class CreateCustomerComponent implements OnInit {
       mother_phone: ['']
     });
   }
+  get f() { return this.formCustomer.controls; }
 
   submit() {
+    this.submitted = true;
     if (this.formCustomer.invalid) {
       return;
     }

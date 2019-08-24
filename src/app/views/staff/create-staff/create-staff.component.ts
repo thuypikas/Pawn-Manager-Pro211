@@ -16,6 +16,7 @@ export class CreateStaffComponent implements OnInit {
   data: any;
   buttonClicked: any;
   action: any = 'Thêm';
+  submitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -45,23 +46,25 @@ export class CreateStaffComponent implements OnInit {
     this.formStaff = this.fb.group({
       _id: [''],
       username: ['', Validators.required],
-      role: [false, Validators.required],
+      role: ['', Validators.required],
       fullname: ['', Validators.required],
       password: ['', Validators.required],
       gender: ['', Validators.required],
       identification: ['', Validators.required],
       address: ['', Validators.required],
-      birthday: [Date()],
-      created_date: [Date()],
+      birthday: ['', Validators.required],
+      created_date: ['', Validators.required],
       avatar: [''],
-      created_address: [''],
-      phone: [''],
-      email: [''],
-      permanent_address: ['']
+      created_address: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', Validators.required],
+      permanent_address: ['', Validators.required]
     });
   }
+  get f() { return this.formStaff.controls; }
 
   submit() {
+    this.submitted = true;
     if (this.formStaff.invalid) {
       return;
     }

@@ -4,7 +4,8 @@
   </div>
   <div class="card-body">
     <button type="button" (click)="actionStaff('add')" class="btn btn-info btn-xs pull-right mb-3"><span
-      class="fa fa-plus-circle"></span> Thêm nhân viên</button>
+      class="fa fa-plus-circle"></span> Thêm nhân viên
+    </button>
     <table class="table">
       <thead>
       <tr>
@@ -20,12 +21,12 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of dataTable; let i = index">
-        <td>{{i+1}}</td>
+        <td>{{i + 1}}</td>
         <td>{{item.username}}</td>
         <td>{{item.fullname}}</td>
         <td>{{item.identification}}</td>
         <td>{{item.phone}}</td>
-        <td>{{item.avatar}}</td>
+        <td><img src="assets/img/avatars/{{item.avatar}}"></td>
         <td>{{item.role ? "Quản lý" : "Nhân viên"}}</td>
         <td>
           <button class="btn btn-info btn-xs" (click)="actionStaff('edit', item)"><span

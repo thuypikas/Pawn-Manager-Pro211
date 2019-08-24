@@ -10,7 +10,7 @@ export class StaffService {
   constructor(private http: HttpClient) {
   }
 
-  baseurl = 'https://d807e310.ngrok.io/';
+  baseurl = 'https://b4027799.ngrok.io/';
 
   getAllStaff() {
     return this.http.get<Staff[]>(this.baseurl + 'staffs');

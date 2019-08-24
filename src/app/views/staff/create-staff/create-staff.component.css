@@ -1,0 +1,4 @@
+.disable input{
+  background-color: darkgray;
+  cursor: default;
+}

@@ -93,8 +93,13 @@ export class CreateMessengerComponent implements OnInit {
   }
 
   sendMessage() {
-    this.formMess.get('customer_phone').setValue(this.findCustomerNameById(this.formMess.get('customer_id')));
-    this.formMess.get('staff_phone').setValue(this.findStaffNameById(this.formMess.get('staff_id')));
+    const y = this.findCustomerNameById(this.formMess.get('customer_id'));
+    const customerPhone = y.indexOf('0') == 0 ? y.replace('0', '84') : y
+    this.formMess.get('customer_phone').setValue(customerPhone);
+
+    const x = this.findStaffNameById(this.formMess.get('staff_id'));
+    const staffPhone = x.indexOf('0') == 0 ? x.replace('0', '84') : x
+    this.formMess.get('staff_phone').setValue(staffPhone);
 
     // if (this.formMess.invalid) {
     //   return;
