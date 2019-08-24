@@ -45,10 +45,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import {NgxBootstrapSliderModule} from 'ngx-bootstrap-slider';
-import {AuthGuard} from './views/_guards/auth.guard';
-import {AuthenticationService} from './views/_services/authentication.service';
 import {LoginService} from './views/_services/login.service';
-import {FakeBackendInterceptor} from './views/_helpers/fake-backend';
 @NgModule({
   imports: [
     BrowserModule,
@@ -85,10 +82,7 @@ import {FakeBackendInterceptor} from './views/_helpers/fake-backend';
     provide: LocationStrategy,
     useClass: HashLocationStrategy,
   },
-    AuthGuard,
-    AuthenticationService,
     LoginService,
-    FakeBackendInterceptor,
   ],
   bootstrap: [ AppComponent ]
 })
