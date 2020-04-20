@@ -44,10 +44,10 @@ export class LoginComponent implements OnInit {
     console.log(data);
     this.service.userLogin(data).subscribe(res => {
       if (res) {
-        this.toastr.success('Login thành công');
+        this.toastr.success('Login thành công!');
         this.router.navigate(['/dashboard']);
       } else {
-        this.toastr.error('username hoặc passwork không đúng');
+        this.toastr.error('username hoặc passwork không đúng!');
       }
     });
   }
